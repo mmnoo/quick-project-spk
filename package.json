@@ -17,7 +17,7 @@
     "eslint": "^7.32.0",
     "eslint-plugin-jest-dom": "^3.9.2",
     "eslint-plugin-testing-library": "^4.12.3",
-    "husky": "^7.0.2",
+    "husky": "^7.0.0",
     "prettier": "^2.4.1"
   },
   "scripts": {
@@ -26,7 +26,8 @@
     "lint": "eslint './src/**/*.js'",
     "prettier": "prettier --write ./src/**/*.js ",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [
