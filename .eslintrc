@@ -1,0 +1,32 @@
+{
+  "extends": ["react-app", "react-app/jest", "@sparkgeo/eslint-config-react"],
+  "plugins": ["react-hooks", "testing-library", "jest-dom"],
+  "rules": {
+    "camelcase": "off",
+    "curly": ["error", "all"],
+    "no-underscore-dangle": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_" // ignore unused vars and args that start with _. These vars are unsued, but named for readability/maintainability of code.
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.stories.js", "src/testUtilities/**/*"],
+      "rules": { "import/no-extraneous-dependencies": "off" }
+    },
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": ["plugin:testing-library/react", "plugin:jest-dom/recommended"]
+    }
+  ]
+}
